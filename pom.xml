@@ -1161,6 +1161,16 @@
         <maven.site.skip>true</maven.site.skip>
       </properties>
 
+      <dependencies>
+        <dependency>
+          <groupId>com.sun</groupId>
+          <artifactId>tools</artifactId>
+          <version>${tools.jar.version}</version>
+          <scope>system</scope>
+          <systemPath>${tools.jar.path}</systemPath>
+        </dependency>
+      </dependencies>
+
       <build>
         <plugins>
           <!-- Generates the site, which is required for assembly -->

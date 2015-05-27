@@ -199,13 +199,9 @@ public class SuppressWarningsHolder
         final String checkAlias = getAlias(sourceName);
         for (Entry entry : entries) {
             final boolean afterStart =
-                entry.getFirstLine() < line
-                    || entry.getFirstLine() == line && entry
-                        .getFirstColumn() <= column;
+                entry.getFirstLine() <= line;
             final boolean beforeEnd =
-                entry.getLastLine() > line
-                    || entry.getLastLine() == line && entry
-                        .getLastColumn() >= column;
+                entry.getLastLine() >= line;
             final boolean nameMatches =
                 entry.getCheckName().equals(checkAlias);
             if (afterStart && beforeEnd && nameMatches) {
